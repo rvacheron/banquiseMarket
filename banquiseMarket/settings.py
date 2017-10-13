@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'banquiseMarket',
     'client',
     'panier',
+    'fournisseur',
+    'produit'
 ]
 
 MIDDLEWARE = [
