@@ -9,4 +9,4 @@ class Fournisseur(models.Model):
 	adresse = models.CharField(max_length=200)
 	code_postal = models.PositiveIntegerField()
 	ville = models.CharField(max_length=50)
-	produit = models.ManyToMany("produit.Produit")
+	produit = models.ManyToManyField("produit.Produit")
