@@ -1,13 +1,28 @@
+{% load static %}
+{% load bootstrap3 %}
+
 <html>
     <head>
-        <!-- code js et css -->
+	<!-- Chargement du CSS -->
+	{% load bootstrap3 %}
+	{% bootstrap_css %}
+	{% bootstrap_messages %}
         <title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
     </head>
     <body>
+	
         {% block content %}
         {% endblock %}
 
         {% block javascript %}
         {% endblock %}
+
+        {% block css %}
+        {% endblock %}
+
+	
+	<!-- Chargement du javascript -->
+	{% bootstrap_javascript jquery=1 %}
     </body>
 </html>
