@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap3',
     'banquiseMarket',
+    'client',
+    'panier',
+    'fournisseur',
+    'produit'
 ]
 
 MIDDLEWARE = [
