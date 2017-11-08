@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
+    url(r'', include('contact.urls'))
 ]
