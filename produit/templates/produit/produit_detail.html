@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="produit">
+        {% if produit.published_date %}
+            <div class="date">
+                {{ produit.published_date }}
+            </div>
+        {% if produit.image %}
+            <img src="{{ produit.image.url }}"/>
+        {% endif %}
+        <p>{{ produit.descriptif }}</p>
+    </div>
+{% endblock %}

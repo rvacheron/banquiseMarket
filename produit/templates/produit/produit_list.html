@@ -1,3 +1,17 @@
 {% extends 'base.html' %}
 
-
+{% block content %}
+    {% for produit in produits reversed %}
+        <div class="produit"> 
+            <div class="date">
+                <p> published date: {{ produit.published_date }}</p>
+            </div>
+            <h1><a href="{% url 'produit_detail' pk=produit.pk %}">{{ produit.nom }}</a></h1>
+            {% if produit.image %}
+                <img src="{{ produit.image.url }}" height="200" width="200"/>
+            {% endif %}
+            <a href="{% url 'produit_detail' pk=produit.pk %}">détails</a>
+        </div>
+        <hr />
+    {% endfor %}
+{% endblock %}
