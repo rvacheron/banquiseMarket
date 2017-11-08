@@ -7,6 +7,5 @@ class Produit(models.Model):
 	prix = models.FloatField()
 	descriptif = models.TextField()
 	qte = models.PositiveIntegerField()
-	fournisseur = models.ManyToManyField("fournisseur.Fournisseur")
 
 
