@@ -45,3 +45,14 @@ hr {
   border: none;
   transition: .3s ease-in-out;
 }
+
+.date {
+    color: #828282;
+    line-height: 60%
+}
+
+.produit {
+    margin-bottom: 70px;
+}
+
+

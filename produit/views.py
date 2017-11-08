@@ -5,7 +5,7 @@ from .models import Produit
 # Create your views here.
 
 def produit_list(request):
-    produits = Produit.object.filter(published_date__lte=timezone.now()).order_by('published_date')
+    produits = Produit.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'produit/produit_list.html', {'produit': produits})
 
 def produit_detail(request, pk):
