@@ -9,3 +9,8 @@ class ContactForm(forms.Form):
             widget=forms.Textarea
     )
 
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args,**kwargs)
+        self.fields['contact_name'].label = "Votre nom:"
+        self.fields['contact_email'].label = "Votre email:"
+        self.fields['content'].label = "Contenu:"
