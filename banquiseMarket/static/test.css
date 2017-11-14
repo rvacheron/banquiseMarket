@@ -51,6 +51,11 @@ hr {
     line-height: 60%
 }
 
+.prix {
+    color: #990000;
+    line-height: 120%
+}
+
 .produit {
     margin-bottom: 70px;
 }
