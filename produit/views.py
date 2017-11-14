@@ -6,8 +6,8 @@ from .models import Produit
 
 def produit_list(request):
     produits = Produit.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'produit/produit_list.html', {'produits': produits})
+    return render(request, 'produit/produit_list.html', {'produits': produits, 'nbar': 'produits'})
 
 def produit_detail(request, pk):
     produit = get_object_or_404(Produit, pk=pk)
-    return render(request, 'produit/produit_detail.html', {'produit': produit})
+    return render(request, 'produit/produit_detail.html', {'produit': produit, 'nbar': 'produits'})
