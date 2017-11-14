@@ -11,28 +11,29 @@
 	<link rel="stylesheet" type="text/css" href="{% static "test.css" %}">
     </head>
     <body>
-
-    <div class="container">
-	  <ul>
-	    <li class="one"><a href="#">Accueil</a></li><!--
-	 --><li class="two"><a href="#">Services</a></li><!----><li class="three"><a href="#">Blog</a></li><!--
-	 --><li class="four"><a href="#">Contact</a></li>
-	    <hr />
-	  </ul>
-	</div>
-
-	<img src="{% static "logoPenguin.png" %}" alt="Logo" />
+	    <div id="global">
+		    <div class="container">
+			  <ul>
+			    <li class="one"><a href="#">Accueil</a></li><!--
+			 --><li class="two"><a href="#">Services</a></li><!----><li class="three"><a href="#">Blog</a></li><!--
+			 --><li class="four"><a href="#">Contact</a></li>
+			    <hr />
+			  </ul>
+			</div>
 	
-        {% block content %}
-        {% endblock %}
+			{% block content %}
+        	{% endblock %}
+
+        	<footer>
+        		<img src="{% static "logoPenguin.png" %}" alt="Logo" />
+        	</footer>
+		</div>
 
         {% block javascript %}
         {% endblock %}
 
         {% block css %}
         {% endblock %}
-
-	
 	<!-- Chargement du javascript -->
 	{% bootstrap_javascript jquery=1 %}
     </body>

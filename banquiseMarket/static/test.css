@@ -4,11 +4,30 @@
 
 body {
   font: 300 100% 'Helvetica Neue', Helvetica, Arial;
+  text-align: center;
+}
+
+#global {
+  text-align: left;
+  width: 800px;
+  margin: 0 auto;
+}
+
+#contact {
+  text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container {
   width: 50%;
   margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ul li {
@@ -54,5 +73,3 @@ hr {
 .produit {
     margin-bottom: 70px;
 }
-
-
