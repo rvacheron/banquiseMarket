@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="produit">
+    <div id="produit">
         {% if produit.published_date %}
             <div class="date">
                 {{ produit.published_date }}
@@ -10,6 +10,9 @@
                 <img src="{{ produit.image.url }}"/>
             {% endif %}
             <p>{{ produit.descriptif }}</p>
+            <div class="prix">
+                <p>Prix : {{ produit.prix }}</p>
+            </div>
         {% endif %}
     </div>
 {% endblock %}
