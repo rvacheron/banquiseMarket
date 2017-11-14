@@ -15,7 +15,7 @@ h1 {
   margin: 0 auto;
 }
 
-#contact {
+.contact {
   text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -48,6 +48,14 @@ hr {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
+}
+
+.presentation {
+  text-align: center;
+}
+
+.last_prod {
+  text-align: center;
 }
 
 .date {
