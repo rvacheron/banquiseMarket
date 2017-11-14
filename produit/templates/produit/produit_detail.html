@@ -6,10 +6,11 @@
             <div class="date">
                 {{ produit.published_date }}
             </div>
+            <p id="nomProduit"> {{ produit.nom }} </p>
             {% if produit.image %}
                 <img src="{{ produit.image.url }}"/>
             {% endif %}
-            <p>{{ produit.descriptif }}</p>
+            <p id="descriptif">{{ produit.descriptif }}</p>
             <div class="prix">
                 <p>Prix : {{ produit.prix }}</p>
             </div>

@@ -7,7 +7,11 @@
 {% block content %}
 
 <div class="presentation">
-	<h1>Bienvenue sur Banquise Market</h1>
+    {% if user.is_authenticated %}
+	<h1>Bienvenue {{ user.get_username }} sur Banquise Market</h1>
+    {% else %}
+    <h1>Bienvenue sur Banquise Market</h1>
+    {% endif %}
 	<h2>La référence des distrutions Linux</h2>
 	<p>Nous vendons les distributions Linux les plus utilisées et performantes au monde, <br/>
 	de Linux Mint, Ubuntu à Kali Linux, il y en a pour tous les goûts</p>
