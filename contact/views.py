@@ -34,5 +34,6 @@ def contact(request):
 
     return render(request, 'contact/contact.html', {
         'form': form_class,
+        'nbar': 'contact'
     })
 
