@@ -27,11 +27,22 @@ h1 {
     margin-right: auto;
 }
 
+<<<<<<< HEAD
+#descriptif {
+    word-wrap: break-word;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+}
+
+#nomProduit {
+  font-size: 25px;
+=======
 #user {
   font-size: 20px;
   color: #ffffff;
   text-align: center;
   margin-top: 12px;
+>>>>>>> 39ee8858690eb742a1aa6fd59dc8db0a6521ac52
 }
 
 .container {
