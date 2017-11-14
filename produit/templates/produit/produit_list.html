@@ -5,7 +5,7 @@
     {% for produit in produits reversed %}
         <div id="produit"> 
             <div class="date">
-                <p> published date: {{ produit.published_date }}</p>
+                <p>Date de publication: {{ produit.published_date }}</p>
             </div>
             <h1><a href="{% url 'produit_detail' pk=produit.pk %}">{{ produit.nom }}</a></h1>
             {% if produit.image %}
