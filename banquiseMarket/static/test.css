@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
 }
 
-#contact {
+.contact {
   text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -28,6 +28,14 @@ hr {
   background: #444;
   border: none;
   transition: .3s ease-in-out;
+}
+
+.presentation {
+  text-align: center;
+}
+
+.last_prod {
+  text-align: center;
 }
 
 .date {
