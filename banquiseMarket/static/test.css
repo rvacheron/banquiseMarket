@@ -27,6 +27,16 @@ h1 {
     margin-right: auto;
 }
 
+#descriptif {
+    word-wrap: break-word;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+}
+
+#nomProduit {
+  font-size: 25px;
+}
+
 .container {
   width: 50%;
   margin: 0 auto;
