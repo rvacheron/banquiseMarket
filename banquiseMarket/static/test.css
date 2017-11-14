@@ -3,6 +3,12 @@ body {
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #global {
   text-align: left;
   width: 800px;
@@ -15,7 +21,6 @@ body {
     margin-right: auto;
 }
 
-<<<<<<< HEAD
 #produit {
     text-align: center;
     margin-left: auto;
@@ -27,8 +32,6 @@ body {
   margin: 0 auto;
 }
 
-=======
->>>>>>> 347d45929ecacd617b40ad3600c5b6c885b49cc3
 footer {
   text-align: center;
     margin-left: auto;
@@ -37,11 +40,14 @@ footer {
 
 hr {
   height: .05rem;
-  width: 25%;
+  width: 50%;
   margin: 0;
   background: #444;
   border: none;
   transition: .3s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
 }
 
 .date {
@@ -50,6 +56,7 @@ hr {
 }
 
 .prix {
+    text-size: 25pt;
     color: #990000;
     line-height: 120%
 }
