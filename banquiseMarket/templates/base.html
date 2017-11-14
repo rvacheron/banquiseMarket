@@ -34,7 +34,13 @@
 			        <li><a href="/mentions">Mentions légales</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
+			      	{% if user.is_authenticated %}
+			      	<li id="user">{{ user.get_username }}</li>
+			      	<li><a href="/logout">Logout</a></li>
+			      	{% else %}
+			      	<li><a href="/signup">S'inscrire</a></li>
 			        <li><a href="/login">Login</a></li>
+			        {% endif %}
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->

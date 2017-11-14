@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.contrib.auth import views as auth_views
 
 from banquiseMarket.views import home
 
@@ -27,6 +26,6 @@ urlpatterns = [
     url(r'^$', home, name="home"),
     url(r'', include('produit.urls')),
     url(r'', include('contact.urls')),
-    url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'', include('login.urls')),
+    url(r'', include('signup.urls'))
 ]
