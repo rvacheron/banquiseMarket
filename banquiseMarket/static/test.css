@@ -19,6 +19,12 @@ body {
     margin-right: auto;
 }
 
+#produit {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
   width: 50%;
   margin: 0 auto;
@@ -73,8 +79,4 @@ hr {
 .prix {
     color: #990000;
     line-height: 120%
-}
-
-.produit {
-    margin-bottom: 70px;
 }
