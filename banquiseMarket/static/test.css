@@ -64,7 +64,7 @@ hr {
 }
 
 .prix {
-    text-size: 25pt;
+    font-size: 20px;
     color: #990000;
     line-height: 120%
 }
