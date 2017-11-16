@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'', include('produit.urls')),
     url(r'', include('contact.urls')),
     url(r'', include('login.urls')),
-    url(r'', include('signup.urls'))
+    url(r'', include('signup.urls')),
+    url(r'', include('cart.urls'))
 ]
