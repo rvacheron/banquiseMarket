@@ -1,12 +1,27 @@
-# templates/cart.html
+
 {% extends 'base.html' %}
 
-{% block body %}
-    <table>
+{% block content %}
+    <table class="table">
         <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
+            <th>Produit 	</th>
+            <th>Quantité 	</th>
+            <th>Prix total 	</th>
         </tr>
+        {% for item in cart %}
+        <tr>
+            <td>{{ item.produit.nom }} 	</td>
+            <td>{{ item.quantity }} 	</td>
+            <td>{{ item.total_price }} 	</td>
+            <td> <a href="{% url 'remove_from_cart' item.produit.pk %}" class="btn btn-info" role="button">Supprimer</a> </td>
+        </tr>
+        {% endfor %}
     </table>
+    <table class = "table">
+    	<tr>
+    		<th> Total </th>
+    		<th>{{ cart.cart.total }} €</th>
+    		<th><a href="{% url 'clear_cart'%}" class="btn btn-info" role="button">Payer</a> </th>
+    </table>
+
 {% endblock %}

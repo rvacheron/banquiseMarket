@@ -14,7 +14,12 @@
             <div class="prix">
                 <p> Prix de l'article: {{ produit.prix }}</p>
             </div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'add_to_cart' produit.pk 1 %}" class="btn btn-info" role="button">Ajouter</a>
+            {% endif %}
+            <a href="{% url 'produit_detail' pk=produit.pk %}">Comments: {{ produit.comments.count }}</a>
             <hr />
         </div>
+
     {% endfor %}
 {% endblock %}

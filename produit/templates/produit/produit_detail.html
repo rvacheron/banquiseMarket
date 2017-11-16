@@ -16,4 +16,17 @@
             </div>
         {% endif %}
     </div>
+    <hr />
+    <div class="bouton">
+        <a class="btn btn-default" href="{% url 'add_comment_to_produit' pk=produit.pk %}">Ajouter un commentaire</a>
+    </div>
+    {% for comment in produit.comments.all %}
+        <div class="comment">
+            <div class="date">{{ comment.created_date }}</div>
+            <strong>{{ comment.auteur }}</strong>
+            <p>{{ comment.commentaire|linebreaks }}</p>
+        </div>
+        {% empty %}
+            <p id="no_comment">Aucun commentaire :(</p>
+    {% endfor %}
 {% endblock %}
