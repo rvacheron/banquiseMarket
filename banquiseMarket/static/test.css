@@ -44,6 +44,14 @@ h1 {
   margin-top: 12px;
 }
 
+#paye {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+  color: #990000;
+}
+
 .comment {
     text-align: center;
     margin-left: auto;

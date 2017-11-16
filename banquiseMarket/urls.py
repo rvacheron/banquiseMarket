@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from banquiseMarket.views import home, mentions
+from banquiseMarket.views import home, mentions, paye
 from banquiseMarket.models import LatestEntriesFeed
 
 admin.autodiscover()
@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^$', home, name="home"),
     url(r'^rss-feed/',LatestEntriesFeed()),
     url(r'^mentions/', mentions, name="mentions"),
+    url(r'^paye/', paye, name="paye"),
     url(r'', include('produit.urls')),
     url(r'', include('contact.urls')),
     url(r'', include('login.urls')),
