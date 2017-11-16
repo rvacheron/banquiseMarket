@@ -24,3 +24,6 @@ def clear_cart(request):
 	cart = Cart(request)
 	cart.clear()
 	return redirect('paye.html')
+
+def payed(request):
+	return render(request, 'paye.html')

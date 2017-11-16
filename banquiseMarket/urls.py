@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from banquiseMarket.views import home, mentions, paye
+from banquiseMarket.views import home, mentions
 from banquiseMarket.models import LatestEntriesFeed
 
 admin.autodiscover()
