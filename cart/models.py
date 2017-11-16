@@ -6,6 +6,7 @@ from django.contrib.contenttypes.models import ContentType
 class Cart(models.Model):
     creation_date = models.DateTimeField(verbose_name=_('creation date'))
     checked_out = models.BooleanField(default=False, verbose_name=_('checked out'))
+    total = models.PositiveIntegerField(default=0,verbose_name=('total'))
 
     class Meta:
         verbose_name = _('cart')
@@ -17,10 +18,10 @@ class Cart(models.Model):
 
 class ItemManager(models.Manager):
     def get(self, *args, **kwargs):
-        if 'product' in kwargs:
-            kwargs['content_type'] = ContentType.objects.get_for_model(type(kwargs['product']))
-            kwargs['object_id'] = kwargs['product'].pk
-            del(kwargs['product'])
+        if 'produit' in kwargs:
+            kwargs['content_type'] = ContentType.objects.get_for_model(type(kwargs['produit']))
+            kwargs['object_id'] = kwargs['produit'].pk
+            del(kwargs['produit'])
         return super(ItemManager, self).get(*args, **kwargs)
 
 class Item(models.Model):
@@ -39,19 +40,19 @@ class Item(models.Model):
         ordering = ('cart',)
 
     def __unicode__(self):
-        return u'%d units of %s' % (self.quantity, self.product.__class__.__name__)
+        return u'%d units of %s' % (self.quantity, self.produit.__class__.__name__)
 
     def total_price(self):
         return self.quantity * self.unit_price
     total_price = property(total_price)
 
-    # product
-    def get_product(self):
+    # produit
+    def get_produit(self):
         return self.content_type.get_object_for_this_type(pk=self.object_id)
 
-    def set_product(self, product):
-        self.content_type = ContentType.objects.get_for_model(type(product))
-        self.object_id = product.pk
+    def set_produit(self, produit):
+        self.content_type = ContentType.objects.get_for_model(type(produit))
+        self.object_id = produit.pk
 
-    product = property(get_product, set_product)
+    produit = property(get_produit, set_produit)
 

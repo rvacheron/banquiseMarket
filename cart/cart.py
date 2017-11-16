@@ -31,40 +31,49 @@ class Cart:
         request.session[CART_ID] = cart.id
         return cart
 
-    def add(self, product, unit_price, quantity=1):
+    def add(self, produit, unit_price, quantity=1):
         try:
             item = models.Item.objects.get(
                 cart=self.cart,
-                product=product,
+                produit=produit,
             )
         except models.Item.DoesNotExist:
             item = models.Item()
             item.cart = self.cart
-            item.product = product
+            item.produit = produit
             item.unit_price = unit_price
             item.quantity = quantity
             item.save()
+            self.cart.total = self.summary()
+            self.cart.save()
         else: #ItemAlreadyExists
             item.unit_price = unit_price
             item.quantity += int(quantity)
             item.save()
+            self.cart.total = self.summary()
+            self.cart.save()
 
-    def remove(self, product):
+
+
+
+    def remove(self, produit):
         try:
             item = models.Item.objects.get(
                 cart=self.cart,
-                product=product,
+                produit=produit,
             )
         except models.Item.DoesNotExist:
             raise ItemDoesNotExist
         else:
             item.delete()
+            self.cart.total = self.summary()
+            self.cart.save()
 
-    def update(self, product, quantity, unit_price=None):
+    def update(self, produit, quantity, unit_price=None):
         try:
             item = models.Item.objects.get(
                 cart=self.cart,
-                product=product,
+                produit=produit,
             )
         except models.Item.DoesNotExist:
             raise ItemDoesNotExist
@@ -91,4 +100,6 @@ class Cart:
     def clear(self):
         for item in self.cart.item_set.all():
             item.delete()
+        self.cart.total = self.summary()
+        self.cart.save()
 
