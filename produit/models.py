@@ -17,3 +17,19 @@ class Produit(models.Model):
 
     def __str__(self):
         return self.nom
+
+class Comment(models.Model):
+    produit = models.ForeignKey('produit.Produit', related_name='comments')
+    auteur = models.CharField(max_length=200)
+    commentaire = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def __str__(self):
+        return self.text
+
+
