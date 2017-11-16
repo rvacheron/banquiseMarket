@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from banquiseMarket.views import home, mentions
+from banquiseMarket.models import LatestEntriesFeed
 
 admin.autodiscover()
 
@@ -24,6 +25,7 @@ urlpatterns = [
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
+    url(r'^rss-feed/',LatestEntriesFeed()),
     url(r'^mentions/', mentions, name="mentions"),
     url(r'', include('produit.urls')),
     url(r'', include('contact.urls')),
