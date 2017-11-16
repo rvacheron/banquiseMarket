@@ -5,5 +5,5 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
      # new url definition
-     url(r'^contact/$', views.contact, name='contact')
+     url(r'^archives/$', views.archives, name='archives')
 ]

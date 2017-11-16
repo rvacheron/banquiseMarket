@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Résultats pour "{{ text }}"</h1>
+    <div class="contact">
+    <form role="form" action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Rechercher</button>
+    </form>
+    {% for produit in produits %}
+        <div id="produit"> 
+            <div class="date">
+                <p>Date de publication: {{ produit.published_date }}</p>
+            </div>
+            <h1><a href="{% url 'produit_detail' pk=produit.pk %}">{{ produit.nom }}</a></h1>
+            {% if produit.image %}
+                <img src="{{ produit.image.url }}" height="200" width="200"/>
+            {% endif %}
+            <div class="prix">
+                <p> Prix de l'article: {{ produit.prix }}</p>
+            </div>
+            <hr />
+        </div>
+        {% empty %}
+        <p>Aucun produit trouvé</p>
+    {% endfor %}
+</div>
+{% endblock %}

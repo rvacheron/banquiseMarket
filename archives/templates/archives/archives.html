@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Banquise Marker - Archives{% endblock %}
+
+{% block content %}
+<div class="contact">
+	<h1>Recherche de produit</h1>
+  	<form role="form" action="" method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+	    <button type="submit">Rechercher</button>
+	</form>
+</div>
+{% endblock %}

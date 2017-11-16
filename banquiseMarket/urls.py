@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'', include('contact.urls')),
     url(r'', include('login.urls')),
     url(r'', include('signup.urls')),
-    url(r'', include('cart.urls'))
+    url(r'', include('cart.urls')),
+    url(r'', include('archives.urls'))
 ]
