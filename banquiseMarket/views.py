@@ -10,5 +10,3 @@ def home(request):
 def mentions(request):
     return render(request,'mentions.html', {'nbar':'mentions'})
 
-def paye(request):
-    return render(request,'paye.html', {'nbar':'panier'})
